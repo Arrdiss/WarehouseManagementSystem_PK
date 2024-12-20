@@ -2,11 +2,8 @@
 FROM mariadb:latest
 
 # Set environment variables for the MariaDB root user
-ENV MARIADB_ROOT_PASSWORD=rootpassword
-ENV MARIADB_DATABASE=mydatabase
-
-# Copy the SQL script to Docker entrypoint directory
-COPY init.sql /docker-entrypoint-initdb.d/
+ENV MARIADB_ROOT_PASSWORD=password
+ENV MARIADB_DATABASE=warehouse
 
 # Expose the default MariaDB port
 EXPOSE 3306
