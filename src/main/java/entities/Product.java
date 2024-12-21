@@ -1,5 +1,6 @@
-package com.example.warehousemanagementsystem_pk;
+package entities;
 
+import entities.enums.Category;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
@@ -21,20 +22,13 @@ public class Product {
     @NotNull
     Boolean archive;
 
-    Product() {}
+    public Product() {}
 
-    Product(String productCode, String productName, int amount, Category category) {
+    public Product(String productCode, String productName, int amount, Category category) {
         this.productCode = productCode;
         this.productName = productName;
         this.amount = amount;
         this.category = category;
         this.archive = false;
     }
-}
-
-enum Category {
-    Parts,
-    Greases,
-    Oils,
-    Tires
 }
