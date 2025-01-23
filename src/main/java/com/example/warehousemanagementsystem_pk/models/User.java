@@ -19,10 +19,14 @@ import java.util.List;
 public class User implements UserDetails {
 
     @Id
-    @Column(name = "email", unique = true)
+    @Column(name = "Email", unique = true)
     private String email;
 
+    @Column(name = "PasswordHash")
     private String password;
+
+    @Column(name = "RoleID")
+    private Integer RoleId;
 
 
     @Override

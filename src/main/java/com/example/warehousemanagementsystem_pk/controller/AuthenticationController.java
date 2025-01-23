@@ -8,6 +8,7 @@ import com.example.warehousemanagementsystem_pk.services.AuthenticationService;
 import com.example.warehousemanagementsystem_pk.services.JwtService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +25,9 @@ public class AuthenticationController {
 
     private final AuthenticationService authenticationService;
 
+    private static final Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
+
+
     public AuthenticationController(JwtService jwtService, AuthenticationService authenticationService) {
         this.jwtService = jwtService;
         this.authenticationService = authenticationService;
@@ -31,7 +35,10 @@ public class AuthenticationController {
 
     @PostMapping("/signup")
     public ResponseEntity<User> register(@RequestBody RegisterUserDto registerUserDto) {
+
         User registeredUser = authenticationService.signup(registerUserDto);
+        logger.info("User registered: {}", registeredUser);
+
 
         return ResponseEntity.ok(registeredUser);
     }

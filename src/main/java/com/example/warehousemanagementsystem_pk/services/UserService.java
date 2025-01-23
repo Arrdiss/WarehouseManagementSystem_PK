@@ -26,6 +26,8 @@ public class UserService implements UserDetailsService {
     }
 
 
+
+
     public List<User> allUsers(){
         return userRepository.findAll();
     }
@@ -36,10 +38,7 @@ public class UserService implements UserDetailsService {
 
 
     public boolean existsByEmail(String email) {
-        if (userRepository.findByEmail(email).isPresent()) {
-            return true;
-        }
-        return false;
+        return userRepository.findByEmail(email).isPresent();
     }
 
 
