@@ -19,15 +19,4 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
-    @GetMapping("/all")
-    public ResponseEntity<List<User>> getAllUsers() {
-        return new ResponseEntity<List<User>>(userService.allUsers(), HttpStatus.OK);
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Optional<User>> getUser(@PathVariable Integer id) {
-        return new ResponseEntity<Optional<User>>(userService.getUser(id), HttpStatus.OK);
-    }
-
 }

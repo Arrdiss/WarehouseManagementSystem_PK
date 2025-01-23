@@ -44,12 +44,14 @@ public class AuthenticationService {
 
     public User signup(RegisterUserDto input) {
 
-        logger.info("if user exists {}", userService.existsByEmail(input.getEmail()));
         if (userService.existsByEmail(input.getEmail())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "User with this email already exists!");
+            throw new ResponseStatusException(HttpStatus.CONFLICT,
+                    "User with this email already exists!");
         }
 
         User user = new User()
+                .setFirstName(input.getFirstName())
+                .setLastName(input.getLastName())
                 .setEmail(input.getEmail())
                 .setPassword(passwordEncoder.encode(input.getPassword()))
                 .setRoleId(input.getRoleId());

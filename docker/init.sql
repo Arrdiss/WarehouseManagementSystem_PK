@@ -11,6 +11,8 @@ CREATE TABLE Roles (
 -- Tabela z użytkownikami
 CREATE TABLE Users (
     Email VARCHAR(255) PRIMARY KEY,
+    FirstName VARCHAR(100),
+    LastName VARCHAR(100),
     PasswordHash VARCHAR(255) NOT NULL,
     RoleID INT,
     FOREIGN KEY (RoleID) REFERENCES Roles(RoleID)
@@ -41,10 +43,6 @@ CREATE TABLE Orders (
 -- Przykładowe dane do tabeli Roles
 INSERT INTO Roles (RoleName) VALUES ('Administrator'), ('User');
 
--- Przykładowe dane do tabeli Users
-INSERT INTO Users (Email, PasswordHash, RoleID) VALUES
-('admin@example.com', 'admin_password_hash', 1),
-('user@example.com', 'user_password_hash', 2);
 
 -- Przykładowe dane do tabeli Products
 INSERT INTO Products (ProductCode, Description, QuantityInStock, Archived) VALUES

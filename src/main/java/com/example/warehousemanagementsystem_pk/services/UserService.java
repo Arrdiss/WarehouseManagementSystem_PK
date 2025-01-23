@@ -25,22 +25,9 @@ public class UserService implements UserDetailsService {
         this.passwordEncoder = passwordEncoder;
     }
 
-
-
-
-    public List<User> allUsers(){
-        return userRepository.findAll();
-    }
-
-    public Optional<User> getUser(Integer id){
-        return userRepository.findById(id);
-    }
-
-
     public boolean existsByEmail(String email) {
         return userRepository.findByEmail(email).isPresent();
     }
-
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

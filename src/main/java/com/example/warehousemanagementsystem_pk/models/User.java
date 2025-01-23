@@ -25,6 +25,12 @@ public class User implements UserDetails {
     @Column(name = "PasswordHash")
     private String password;
 
+    @Column(name = "FirstName")
+    private String firstName;
+
+    @Column(name = "LastName")
+    private String lastName;
+
     @Column(name = "RoleID")
     private Integer RoleId;
 
