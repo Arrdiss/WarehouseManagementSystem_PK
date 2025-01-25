@@ -1,0 +1,18 @@
+###
+GET http://localhost:8081/products/all
+
+###
+POST http://localhost:8081/products
+Content-Type: application/json
+
+{
+  "productCode": "PRODUCT_CODE_7",
+  "name": "NAME_1",
+  "description":  "DESCRIPTION_2",
+  "price": 123.5,
+  "quantityInStock":  50,
+  "archived": false
+}
+
+###
+DELETE http://localhost:8081/products/one/PRODUCT_CODE_3

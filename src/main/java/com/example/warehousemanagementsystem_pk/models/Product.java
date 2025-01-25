@@ -20,20 +20,20 @@ import java.util.List;
 public class Product {
     @Id
     @Column(name="ProductCode")
-    private String ProductCode;
+    private String productCode;
 
     @Column(name="Name")
-    private String Name;
+    private String name;
 
     @Column(name="Description")
-    private String Description;
+    private String description;
 
     @Column(name="Price")
-    private double Price;
+    private Double price;
 
     @Column(name="QuantityInStock")
-    private int QuantityInStock;
+    private Integer quantityInStock;
 
     @Column(name="Archived")
-    private boolean Archived;
+    private Boolean archived;
 }
