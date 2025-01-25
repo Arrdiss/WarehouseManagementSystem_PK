@@ -3,8 +3,8 @@ services:
     build: .
     container_name: db
     environment:
-      MARIADB_ROOT_PASSWORD: rootpassword
-      MARIADB_DATABASE: mydatabase
+      MARIADB_ROOT_PASSWORD: password
+      MARIADB_DATABASE: warehouse
     ports:
       - "3306:3306"
     volumes:
