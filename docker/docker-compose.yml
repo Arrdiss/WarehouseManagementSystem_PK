@@ -1,5 +1,5 @@
 services:
-  mariadb:
+  db:
     build: .
     container_name: db
     environment:
@@ -28,4 +28,3 @@ volumes:
 
 networks:
   custom-network:
-
